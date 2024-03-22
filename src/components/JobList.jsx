@@ -15,7 +15,8 @@ const JobList = () => {
           
 
           {
-            jobs.map((job) => (<Job 
+            jobs.map((job) => (<Job
+              key = {job.id} 
               id = {job.id}
               type = {job.type}
               title = {job.title}
