@@ -1,6 +1,14 @@
-import React from 'react'
+import {React, useState} from 'react'
 
 const Job = (props) => {
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  let description = props.description;
+
+  if(!showFullDescription){
+    description = props.description.substring(0, 90) + '...';
+  }
   return (
     <div className="bg-white rounded-xl shadow-md relative">
             <div className="p-4">
@@ -10,8 +18,9 @@ const Job = (props) => {
               </div>
 
               <div className="mb-5">
-               {props.description}
+               {description}
               </div>
+              <button onClick={() => setShowFullDescription((previusStage) => (!previusStage))} className="text-indigo-500 mb-5 hover:text-indigo-600">{showFullDescription ? 'Less' : 'More'}</button>
 
               <h3 className="text-indigo-500 mb-2">{props.salary} / Year</h3>
 
