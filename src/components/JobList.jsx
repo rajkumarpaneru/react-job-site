@@ -35,9 +35,9 @@ const JobList = ({isHome = true}) => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-
-          {
-            jobs
+          {loading ? (<h2>Loading...</h2>)
+          :
+          jobs
             .map((job) => (<Job
               key = {job.id} 
               id = {job.id}
