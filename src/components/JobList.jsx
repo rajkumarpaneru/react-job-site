@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 // import jobs from '../jobs.json';
 
 import Job from './Job';
+import Spinner from './Spinner';
 
 const JobList = ({isHome = true}) => {
   // const myJobs = isHome ? jobs.slice(0,3) : jobs;
@@ -33,22 +34,28 @@ const JobList = ({isHome = true}) => {
         <h2 className="text-3xl font-bold text-indigo-500 mb-6 text-center">
           {isHome ? 'Recent Jobs' : 'Browse Jobs'}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {loading ? (<h2>Loading...</h2>)
-          :
-          jobs
-            .map((job) => (<Job
-              key = {job.id} 
-              id = {job.id}
-              type = {job.type}
-              title = {job.title}
-              description = {job.description}
-              salary = {job.salary}
-              location = {job.location}
-              />))
-          }  
-        </div>
+          {
+            loading ? (
+              <Spinner loading={loading}/>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {
+                  jobs
+                  .map((job) => (<Job
+                    key = {job.id} 
+                    id = {job.id}
+                    type = {job.type}
+                    title = {job.title}
+                    description = {job.description}
+                    salary = {job.salary}
+                    location = {job.location}
+                    />))
+                }
+              </div>
+            )
+          }
+                  
       </div>
     </section>
   )
