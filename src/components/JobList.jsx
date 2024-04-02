@@ -44,12 +44,7 @@ const JobList = ({isHome = true}) => {
                   jobs
                   .map((job) => (<Job
                     key = {job.id} 
-                    id = {job.id}
-                    type = {job.type}
-                    title = {job.title}
-                    description = {job.description}
-                    salary = {job.salary}
-                    location = {job.location}
+                    job = {job}
                     />))
                 }
               </div>
