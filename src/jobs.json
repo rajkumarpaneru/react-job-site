@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "d50b",
+      "title": "In id totam ut ipsa",
+      "type": "Part-Time",
+      "location": "Voluptas culpa ipsa",
+      "description": "Magna quaerat dolore",
+      "salary": "$60K - 70K",
+      "company": {
+        "name": "Houston and Case Plc",
+        "description": "Quod facilis aut cul",
+        "contactEmail": "cequgimecy@mailinator.com",
+        "contactPhone": "+1 (489) 292-5352"
+      }
     }
   ]
 }
