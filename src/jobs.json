@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "b070",
-      "title": "Tempora earum iste o",
-      "type": "Full-Time",
-      "location": "Reprehenderit persp",
-      "description": "Consequatur Dolore ",
-      "salary": "$175K - 200K",
-      "company": {
-        "name": "Cotton Guzman Trading",
-        "description": "Nostrud in vero sapi",
-        "contactEmail": "qulukididy@mailinator.com",
-        "contactPhone": "+1 (416) 533-3038"
-      }
     }
   ]
 }
