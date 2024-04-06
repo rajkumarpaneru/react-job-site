@@ -12,7 +12,7 @@ import JobsPage from './pages/JobsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import JobPage, {jobLoader} from './pages/JobPage';
 import AddJobPage from './pages/AddJobPage';
-
+import EditJobPage from './pages/EditJobPage';
 
 const App = () => {
   const addJob = async (newJob) => {
@@ -22,6 +22,18 @@ const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(newJob)
+    });
+
+    return;
+  }
+
+  const updateJob = async (job) => {
+    const res = await fetch('/api/jobs/' + job.id, {
+      method: 'put',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(job)
     });
 
     return;
@@ -42,8 +54,14 @@ const App = () => {
       <Route index element={<HomePage />} />
       <Route path='/jobs' element={<JobsPage />} />
       <Route path='/jobs/create' element={<AddJobPage addJobSubmit={addJob}/>} />
+      <Route 
+        path='/jobs/:id/edit' 
+        element={<EditJobPage updateJobSubmit={updateJob}/>} 
+        loader={jobLoader}
+      />
       <Route path='/jobs/:id' element={<JobPage deleteJob={deleteJob}/>} loader={jobLoader}/>
       <Route path='*' element={<NotFoundPage />}/>
+      
     </Route>
     
     )
